@@ -1,0 +1,23 @@
+{
+    "name": "schakel/whiteworks-api",
+    "description": "WhiteWorks API client for PHP 5.5+, based on Guzzle 6",
+    "type": "package",
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.3"
+    },
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Roelof Roos",
+            "email": "roelof@schakelmarketeers.nl"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Schakel\\WhiteWorks\\": "src"
+        }
+    }
+}

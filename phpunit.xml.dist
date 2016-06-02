@@ -1,0 +1,24 @@
+<phpunit
+    colors="true"
+    verbose="true"
+    processIsolation="false"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="WhiteWorks API client">
+            <directory>tests/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/</directory>
+            <directory suffix=".php">src/models</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="coverage/clover.xml"/>
+        <log type="coverage-html" target="coverage/"/>
+    </logging>
+</phpunit>
