@@ -2,8 +2,9 @@
     "name": "schakel/whiteworks-api",
     "description": "WhiteWorks API client for PHP 5.5+, based on Guzzle 6",
     "type": "package",
+    "version": "0.1.0",
     "require": {
-        "guzzlehttp/guzzle": "^6.2"
+        "graze/guzzle-jsonrpc": "~3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^5.3"
