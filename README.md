@@ -20,7 +20,7 @@ your business needs, please contact us.
 The library is avaialble via Composer.
 
 ```
-composer require schakel/WhiteWorks-API
+composer require schakel/whiteworks-api
 ```
 
 ## Usage
