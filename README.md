@@ -103,5 +103,3 @@ everyone stays on the same level.
 [cov-link]: https://coveralls.io/github/SchakelMarketeers/WhiteWorks-API?branch=master
 [license]: LICENSE
 [getcomposer]: https://getcomposer.org/
-
-
