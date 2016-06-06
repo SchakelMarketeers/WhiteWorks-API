@@ -37,12 +37,8 @@ The easiest way to start using this library, is by installing it via [Composer][
 composer require schakel/whiteworks-api
 ```
 
-If you don't have access to composer, you can download or clone the repository
-and add the following Namespace link to your PSR-4 compliant autoloader:
-
-|Namespace              |Path                               |
-|-                      |-                                  |
-|`\Schakel\WhiteWorks`  |`[path-to-whiteworks-api]/src/`    |
+If you don't have access to composer, you can download or clone the repository.
+Make sure you map the `\Schakel\WhiteWorks` namespace to the `src/` directory of this project in your PSR-4 compliant autoloader.
 
 ## Usage
 
@@ -108,8 +104,8 @@ requirements:
  -  Your work must not bring unneeded dependancies (no `left-pad` phenomena)
  -  You need to write proper unit tests.
 
-All pull requests are tested by Travis CI and Coveralls to make sure
-they work as intended. We aim for a coverage rate > 70%.
+All pull requests are tested by Travis CI and Coveralls to make sure they work
+as intended. We aim for a coverage rate > 70%.
 
 Please add your name and e-mail or handle above all classes you write, so we
 can contact you should anything go awol afterwards. Adding yourself to [AUTHORS](./AUTHORS) is also highly recommended.
