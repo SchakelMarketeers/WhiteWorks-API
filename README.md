@@ -21,6 +21,14 @@ keeping the code closed-source.
 
 In case this does not meet your business needs, please contact us.
 
+## Requirements
+
+This library has the following requirements:
+
+ - cURL
+ - PHP 5.6, 7.0+ or HHVM
+ - PSR-4 compliant autoloader (when not using Composer)
+
 ## Installation
 
 The easiest way to start using this library, is by installing it via [Composer][getcomposer].
@@ -29,15 +37,12 @@ The easiest way to start using this library, is by installing it via [Composer][
 composer require schakel/whiteworks-api
 ```
 
-If that doesn't work, you can download or clone the repository and add the
-following Namespace link to your PSR-4 compatible autoloader:
+If you don't have access to composer, you can download or clone the repository
+and add the following Namespace link to your PSR-4 compliant autoloader:
 
 |Namespace              |Path                               |
 |-                      |-                                  |
 |`\Schakel\WhiteWorks`  |`[path-to-whiteworks-api]/src/`    |
-
-You can also choose to manually load all the PHP files you need, but that's a
-Very Bad Idea™.
 
 ## Usage
 
@@ -94,8 +99,21 @@ foreach ($allClients as $client) {
 
 ## Contributing
 
-You are free to help contributing to the project. Please open an issue, so
-everyone stays on the same level.
+Everyone is welcome to help us realise this program, there are however a few
+requirements:
+
+ -  You must pick up an issue or open one concerning your change, so we don't
+    get redundant work.
+ -  Your work must match [our programming standards](STANDARDS.md).
+ -  Your work must not bring unneeded dependancies (no `left-pad` phenomena)
+ -  You need to write proper unit tests.
+
+All pull requests are tested by Travis CI and Coveralls to make sure
+they work as intended. We aim for a coverage rate > 70%.
+
+Please add your name and e-mail or handle above all classes you write, so we
+can contact you should anything go awol afterwards. Adding yourself to [AUTHORS](./AUTHORS) is also highly recommended.
+
 
 [ci]: https://travis-ci.org/SchakelMarketeers/WhiteWorks-API.svg?branch=master
 [ci-link]: https://travis-ci.org/SchakelMarketeers/WhiteWorks-API

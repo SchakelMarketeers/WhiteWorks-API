@@ -17,4 +17,4 @@ script:
     - phpunit
 
 after_script:
-    - travis_retry php src/vendor/bin/coveralls -v
+    - travis_retry php vendor/bin/coveralls -v
