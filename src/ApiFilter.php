@@ -55,73 +55,82 @@ class ApiFilter
     const COMP_LT = 'less';
 
     /**
-     * Creates a new filter. Operator can be a COMP_ constant or a symbol (<, != etc).
-     * Value2 is required for in (><), not in (<>) and between (&) operators.
-     *
-     * @param string $key
-     * @param string $operator
-     * @param mixed $value
-     * @param mixed $value2
-     * @return Schakel\WhiteWorks\ApiFilter
+     * @var string Regex used to match against organic filters
      */
-    public static function factory($key, $operator, $value, $value2 = null)
-    {
-        $obj = new static();
-        $obj->setKey($key);
-        $obj->setFirstValue($value);
+    const FILTER_REGEX = '/^([\w\-]{2,}) ([<>]|[!=<>]{2}|(?:not ?)?in|between) (.+?)(?: \|\| (.+?))?$/';
 
-        switch ((string) $operator) {
-            case self::COMP_IN:
+    /**
+     * Creates a filter from a comparison string. See /doc/filters.md
+     *
+     * @param string $filter
+     * @return Schakel\WhiteWorks\ApiFilter|null
+     */
+    public static function fromString($filter)
+    {
+        if (!preg_match(self::FILTER_REGEX, $filter, $matches)) {
+            return null;
+        }
+
+        array_shift($matches);
+        $obj->setKey(array_shift($matches));
+
+        switch (array_shift($matches)) {
             case '><':
+            case 'in':
                 $obj->setOperator(self::COMP_IN);
                 break;
 
-            case self::COMP_NI:
             case '<>':
+            case 'notin':
             case 'not in':
                 $obj->setOperator(self::COMP_NI);
                 break;
 
-            case self::COMP_NE:
             case '!=':
-            case 'not equal':
                 $obj->setOperator(self::COMP_NE);
                 break;
 
-            case self::COMP_BT:
-            case '&':
+            case 'between':
                 $obj->setOperator(self::COMP_BT);
                 break;
 
-            case self::COMP_GE:
             case '>':
                 $obj->setOperator(self::COMP_GE);
                 break;
 
-            case self::COMP_GT:
             case '>=':
                 $obj->setOperator(self::COMP_GT);
                 break;
 
-            case self::COMP_LE:
             case '<':
                 $obj->setOperator(self::COMP_LE);
                 break;
 
-            case self::COMP_LT:
             case '<=':
                 $obj->setOperator(self::COMP_LT);
                 break;
 
-            case self::COMP_EQ:
             case '==':
-            default:
                 $obj->setOperator(self::COMP_EQ);
+                break;
+
+            // Invalid key
+            default:
+                return null;
         }
 
-        if ($obj->hasSecondValue()) {
-            $obj->setSecondValue($val2);
+        if ($obj->hasSecondValue() && count($matches) == 2) {
+            $obj->setFirstValue(array_shift($matches));
+            $obj->setSecondValue(array_shift($matches));
+        } elseif ($obj->hasSecondValue()) {
+            throw new \UnderflowException(sprintf(
+                'Expected 2 arguments seperated by "||", received "%s".',
+                $matches[0]
+            ));
+        } else {
+            $obj->setFirstValue(implode(' || ', $matches));
         }
+        return $obj;
     }
 
 
