@@ -98,7 +98,7 @@ You are free to help contributing to the project. Please open an issue, so
 everyone stays on the same level.
 
 [ci]: https://travis-ci.org/SchakelMarketeers/WhiteWorks-API.svg?branch=master
-[ci-link]: https://travis-ci.org/DJOAmersfoort/IdentityProviderBeta
+[ci-link]: https://travis-ci.org/SchakelMarketeers/WhiteWorks-API
 [cov]: https://coveralls.io/repos/github/SchakelMarketeers/WhiteWorks-API/badge.svg?branch=master
 [cov-link]: https://coveralls.io/github/SchakelMarketeers/WhiteWorks-API?branch=master
 [license]: LICENSE
