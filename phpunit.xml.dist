@@ -14,8 +14,10 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/</directory>
-            <directory suffix=".php">src/models</directory>
         </whitelist>
+        <blacklist>
+            <directory suffix=".php">vendor/</directory>
+        </blacklist>
     </filter>
     <logging>
         <log type="coverage-clover" target="coverage/clover.xml"/>
