@@ -57,7 +57,7 @@ class Client extends RpcClient
     public function getApi($apiName)
     {
         // Check type
-        if (!is_string($api)) {
+        if (!is_string($apiName)) {
             throw new \InvalidArgumentException(sprintf(
                 'Expected $apiName to be a string, got %s.',
                 gettype($apiName)
