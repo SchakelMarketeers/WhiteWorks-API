@@ -99,5 +99,4 @@ class CalendarItem extends ApiNodeAbstract
     {
         return $this->apiCall('calendaritem.delete', [$id]);
     }
-
 }

@@ -19,7 +19,6 @@ use Schakel\WhiteWorks\Client;
  */
 interface ApiNodeInterface
 {
-
     /**
      * Creates a new API, using the given client to communicate with the
      * endpoint.
@@ -72,5 +71,4 @@ interface ApiNodeInterface
      * @return boolean
      */
     public function delete($id);
-
 }

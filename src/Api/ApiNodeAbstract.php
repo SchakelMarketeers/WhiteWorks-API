@@ -80,26 +80,25 @@ abstract class ApiNodeAbstract implements ApiNodeInterface
     /**
      * {@inheritdoc}
      */
-    public abstract function get(array $filters, array $options = []);
+    abstract public function get(array $filters, array $options = []);
 
     /**
      * {@inheritdoc}
      */
-    public abstract function getOne(array $filters, array $options = []);
+    abstract public function getOne(array $filters, array $options = []);
 
     /**
      * {@inheritdoc}
      */
-    public abstract function update($id, array $fields = []);
+    abstract public function update($id, array $fields = []);
 
     /**
      * {@inheritdoc}
      */
-    public abstract function create(array $fields = []);
+    abstract public function create(array $fields = []);
 
     /**
      * {@inheritdoc}
      */
-    public abstract function delete($id);
-
+    abstract public function delete($id);
 }
