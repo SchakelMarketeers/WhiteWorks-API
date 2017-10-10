@@ -2,6 +2,7 @@
 
 [![Build status][ci]][ci-link]
 [![Coverage Status][cov]][cov-link]
+[![License][license-img]][license]
 
 A WhiteWorks API client for PHP5.5+, based on Guzzle 6
 
@@ -111,9 +112,10 @@ Please add your name and e-mail or handle above all classes you write, so we
 can contact you should anything go awol afterwards. Adding yourself to [AUTHORS](./AUTHORS) is also highly recommended.
 
 
-[ci]: https://travis-ci.org/SchakelMarketeers/WhiteWorks-API.svg?branch=master
-[ci-link]: https://travis-ci.org/SchakelMarketeers/WhiteWorks-API
-[cov]: https://coveralls.io/repos/github/SchakelMarketeers/WhiteWorks-API/badge.svg?branch=master
-[cov-link]: https://coveralls.io/github/SchakelMarketeers/WhiteWorks-API?branch=master
+[ci]: https://travis-ci.org/schakelmarketeers/WhiteWorks-API.svg?branch=master
+[ci-link]: https://travis-ci.org/schakelmarketeers/WhiteWorks-API
+[cov]: https://coveralls.io/repos/github/schakelmarketeers/WhiteWorks-API/badge.svg?branch=master
+[cov-link]: https://coveralls.io/github/schakelmarketeers/WhiteWorks-API?branch=master
 [license]: LICENSE.md
+[license-img]: https://img.shields.io/github/license/schakelmarketeers/WhiteWorks-API.svg
 [getcomposer]: https://getcomposer.org/
