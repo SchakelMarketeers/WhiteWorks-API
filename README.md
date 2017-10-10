@@ -115,5 +115,5 @@ can contact you should anything go awol afterwards. Adding yourself to [AUTHORS]
 [ci-link]: https://travis-ci.org/SchakelMarketeers/WhiteWorks-API
 [cov]: https://coveralls.io/repos/github/SchakelMarketeers/WhiteWorks-API/badge.svg?branch=master
 [cov-link]: https://coveralls.io/github/SchakelMarketeers/WhiteWorks-API?branch=master
-[license]: LICENSE
+[license]: LICENSE.md
 [getcomposer]: https://getcomposer.org/
