@@ -1,20 +1,46 @@
-# --> Composer
+
+# Created by https://www.gitignore.io/api/linux,composer,vim,build
+
+#!! ERROR: build is undefined. Use list command to see defined gitignore types !!#
+
+### Composer ###
 composer.phar
 /vendor/
 
-# --> Vim
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
-Session.vim
-.netrwhist
-*~
-tags
+# Commit your application's lock file http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file
+# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# composer.lock
 
-# --> Linux
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
+
+# KDE directory preferences
 .directory
+
+# Linux trash folder which might appear on any partition or disk
 .Trash-*
 
-# --> Schakel/WhiteWorks
-/coverage/
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### Vim ###
+# swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
+# session
+Session.vim
+# temporary
+.netrwhist
+# auto-generated tag files
+tags
+
+# End of https://www.gitignore.io/api/linux,composer,vim,build
+
+### WhiteWorks API ###
+/build/logs
 

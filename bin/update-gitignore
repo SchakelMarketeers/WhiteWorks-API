@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -xe
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+APP_DIR="$(realpath "$(dirname "$DIR")" )"
+
+wget \
+    --output-document="${APP_DIR}/.gitignore" \
+    https://gitignore.io/api/linux,composer,vim,build
+
+tee --append "${APP_DIR}/.gitignore" <<IGNORE
+
+### WhiteWorks API ###
+/build/logs
+
+IGNORE
