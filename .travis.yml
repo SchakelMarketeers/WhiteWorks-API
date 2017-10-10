@@ -2,19 +2,32 @@ language: php
 sudo: false
 
 php:
-    - 5.6
-    - 7.0
-    - hhvm
+    - '5.6'
+    - '7.0'
+    - '7.1'
     - nightly
 
+cache:
+    directories:
+        - /home/travis/.composer
+        - vendor/
+
+# Install CodeSniffer globally, and add to path
+before_install:
+    - composer global require --no-suggest squizlabs/php_codesniffer
+    - 'export PATH="${PATH}:${HOME}/.composer/vendor/bin"'
+
+# Install Coveralls API locally, otherwise it seems to cause issues
 before_script:
-    - travis_retry composer self-update
-    - travis_retry composer install --no-interaction
-    - travis_retry composer require satooshi/php-coveralls --dev
+    - travis_retry composer require --no-interaction --no-suggest satooshi/php-coveralls
+    - travis_retry composer install --no-interaction --no-suggest
 
+# Create build dir, run PHP_Unit and PHP_CodeSniffer
 script:
-    - mkdir -p coverage
+    - mkdir -p build/logs
     - phpunit
+    - phpcs -p
 
-after_script:
-    - travis_retry php vendor/bin/coveralls -v
+# Report coverage to Coveralls
+after_success:
+    - travis_retry vendor/bin/coveralls -v

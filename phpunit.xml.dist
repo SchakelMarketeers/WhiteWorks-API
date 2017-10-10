@@ -20,7 +20,7 @@
         </blacklist>
     </filter>
     <logging>
-        <log type="coverage-clover" target="coverage/clover.xml"/>
-        <log type="coverage-html" target="coverage/"/>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-html" target="build/logs/"/>
     </logging>
 </phpunit>

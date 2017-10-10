@@ -6,6 +6,7 @@
 
   <!-- Ignore some directories -->
   <exclude-pattern>vendor/</exclude-pattern>
+  <exclude-pattern>build/</exclude-pattern>
 
   <!-- We just use PSR-2 -->
   <rule ref="PSR2"/>
